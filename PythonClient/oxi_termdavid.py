@@ -13,7 +13,7 @@ from suds import WebFault
 data = sys.argv[1]
 
 
-def DAVIDtermenrich(listF, idType, bgF="/home/chit/Desktop/Thesis/data/bg_hs.txt", resF='', bgName = 'Background1',listName='List1', category = ''):
+def DAVIDtermenrich(listF, idType, bgF="/data/home/students/chit/Thesis/data/bg_hs.txt", resF='', bgName = 'Background1',listName='List1', category = ''):
     from suds.client import Client
     import os
    
@@ -82,7 +82,7 @@ def DAVIDtermenrich(listF, idType, bgF="/home/chit/Desktop/Thesis/data/bg_hs.txt
 
 if __name__ == '__main__':
     try:
-        DAVIDtermenrich(listF = '/home/chit/Desktop/Thesis/results/{}/oxi_genelist.txt'.format(data), bgF='/home/chit/Desktop/Thesis/results/{}/oxi_bg.txt'.format(data), idType = 'ENSEMBL_GENE_ID', listName = 'oxidata{}'.format(data), category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')
+        DAVIDtermenrich(listF = '/data/home/students/chit/Thesis/results/{}/oxi_genelist.txt'.format(data), bgF='/data/home/students/chit/Thesis/results/{}/oxi_bg.txt'.format(data), idType = 'ENSEMBL_GENE_ID', listName = 'oxidata{}'.format(data), category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')
     except WebFault as detail:
         print(detail)
     except WebFault as detail:
