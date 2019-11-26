@@ -4,7 +4,7 @@ import sys
 data = sys.argv[1]
 c = sys.argv[2]
 
-def DAVIDenrich(listF, idType, bgF='', resF='', bgName = "/home/chit/Desktop/Thesis/data/bg_hs.txt",listName='List1', category = '', thd=0.1, ct=2):
+def DAVIDenrich(listF, idType, bgF='', resF='', bgName = "/nfs/home/students/chit/Thesis/data/bg_hs.txt",listName='List1', category = '', thd=0.1, ct=2):
     from suds.client import Client
     import os
    
@@ -66,5 +66,5 @@ def DAVIDenrich(listF, idType, bgF='', resF='', bgName = "/home/chit/Desktop/The
 
 
 if __name__ == '__main__':
-	DAVIDenrich(listF = '/home/chit/Desktop/Thesis/results/{}/clust{}.txt'.format(data,c), idType = 'ENSEMBL_GENE_ID', listName = 'clust{}'.format(c), category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')
+	DAVIDenrich(listF = '/nfs/home/students/chit/Thesis/results/{}/clust{}.txt'.format(data,c), idType = 'ENSEMBL_GENE_ID', listName = 'clust{}'.format(c), category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')
 
