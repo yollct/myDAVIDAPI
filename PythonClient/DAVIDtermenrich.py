@@ -1,9 +1,9 @@
 #!python
 # by courtesy of HuangYi @ 20110424
 import sys
-
+from os import listdir
 data = sys.argv[1]
-
+mydir = listdir("/nfs/home/students/chit/Thesis/results/{}/".format(data))
 
 def DAVIDtermenrich(listF, idType, bgF="/nfs/home/students/chit/Thesis/data/bg_hs.txt", resF='', bgName = 'Background1',listName='List1', category = ''):
     from suds.client import Client
@@ -73,4 +73,11 @@ def DAVIDtermenrich(listF, idType, bgF="/nfs/home/students/chit/Thesis/data/bg_h
     print ('write file:', resF, 'finished!')
 
 if __name__ == '__main__':
-    DAVIDtermenrich(listF = '/nfs/home/students/chit/Thesis/results/{}/highlogenes_ens.txt'.format(data), idType = 'ENSEMBL_GENE_ID', listName = 'highlogodd', category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')
+    if sum("highlogenes" in m for m in mydir)>1:
+        num_to_iter = sum("highlogenes" in m for m in mydir)
+        for i in range(num_to_iter):
+            DAVIDtermenrich(listF = '/nfs/home/students/chit/Thesis/results/{}/highlogenes_ens{}.txt'.format(data,i), idType = 'ENSEMBL_GENE_ID', listName = 'highlogodd', category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')   
+    else: 
+        DAVIDtermenrich(listF = '/nfs/home/students/chit/Thesis/results/{}/highlogenes_ens.txt'.format(data), idType = 'ENSEMBL_GENE_ID', listName = 'highlogodd', category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')
+            
+    
