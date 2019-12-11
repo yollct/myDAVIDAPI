@@ -75,6 +75,6 @@ def DAVIDtermenrich(listF, idType, bgF="/nfs/home/students/chit/Thesis/data/bg_h
 if __name__ == '__main__':
     num_to_iter = sum("highlogenes" in m for m in mydir)
     for i in range(num_to_iter):
-        DAVIDtermenrich(listF = '/nfs/home/students/chit/Thesis/results/{}/highlogenes_ens{}.txt'.format(data,i), idType = 'ENSEMBL_GENE_ID', listName = 'highlogodd', category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')   
+        DAVIDtermenrich(listF = '/nfs/home/students/chit/Thesis/results/{}/highlogenes_ens{}.txt'.format(data,i+1), idType = 'ENSEMBL_GENE_ID', listName = 'highlogodd', category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')   
 
     
