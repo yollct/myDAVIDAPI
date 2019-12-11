@@ -81,7 +81,7 @@ def DAVIDtermenrich(listF, idType, bgF="/nfs/home/students/chit/Thesis/data/bg_h
     print ('write file:', resF, 'finished!')
 
 if __name__ == '__main__':
-	if (hlogenes > 3000):
+	if hlogenes > 3000:
 		DAVIDtermenrich(listF = '/nfs/home/students/chit/Thesis/results/{}/highlogenes_david_ens.txt'.format(data), idType = 'ENSEMBL_GENE_ID', listName = 'highlogodd', category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')   
 	else:
 		DAVIDtermenrich(listF = '/nfs/home/students/chit/Thesis/results/{}/highlogenes_ens.txt'.format(data), idType = 'ENSEMBL_GENE_ID', listName = 'highlogodd', category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')   
