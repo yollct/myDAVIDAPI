@@ -33,7 +33,7 @@ def DAVIDtermenrich(listF, idType, bgF="/nfs/home/students/chit/Thesis/data/bg_h
         print ('Use default background.')
         
     url = 'https://david.ncifcrf.gov/webservice/services/DAVIDWebService?wsdl'
-    client = Client(url, location = "https://david.ncifcrf.gov/webservice/services/DAVIDWebService")
+    client = Client(url, location = "https://david.ncifcrf.gov/webservice/services/DAVIDWebService", timeout=500)
     client.wsdl.services[0].setlocation('https://david.ncifcrf.gov/webservice/services/DAVIDWebService.DAVIDWebServiceHttpSoap11Endpoint/')
     print ('User Authentication:',client.service.authenticate('ge75nij@mytum.de'))
 

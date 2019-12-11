@@ -1,7 +1,14 @@
 #!python
 # by courtesy of HuangYi @ 20110424
 import sys
-from os import listdir
+import logging
+import traceback as tb
+import suds.metrics as metrics
+from tests import *
+from suds import *
+from suds.client import Client
+from datetime import datetime
+from suds import WebFault
 data = sys.argv[1]
 
 def DAVIDtermenrich(listF, idType, bgF="/nfs/home/students/chit/Thesis/data/bg_hs.txt", resF='', bgName = 'Background1',listName='List1', category = ''):
@@ -72,6 +79,10 @@ def DAVIDtermenrich(listF, idType, bgF="/nfs/home/students/chit/Thesis/data/bg_h
     print ('write file:', resF, 'finished!')
 
 if __name__ == '__main__':
-	DAVIDtermenrich(listF = '/nfs/home/students/chit/Thesis/results/{}/highlogenes_ens.txt'.format(data), idType = 'ENSEMBL_GENE_ID', listName = 'highlogodd', category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')   
-
+	try:
+		DAVIDtermenrich(listF = '/nfs/home/students/chit/Thesis/results/{}/highlogenes_ens.txt'.format(data), idType = 'ENSEMBL_GENE_ID', listName = 'highlogodd', category = 'abcd,BBID,BIOCARTA,COG_ONTOLOGY,INTERPRO,KEGG_PATHWAY,OMIM_DISEASE,PIR_SUPERFAMILY,SMART,SP_PIR_KEYWORDS,UP_SEQ_FEATURE,GOTERM_MF_FAT,GOTERM_CC_FAT,GOTERM_BP_FAT')   
+	except WebFault as detail:
+        	print(detail)
+    	except WebFault as detail:
+        	print(detail)
     
